@@ -122,12 +122,12 @@
         }, 
         {
             "location": "/donate/", 
-            "text": "Support ToggleTVSet\n\n\nToggleTVSet\n is and always will be free and open-source, but it still requires many man-hours of development, \nbug-fixing, maintaining the docs, support in MODX forums and on GitHub between the releases.\n\n\nPlease support the ongoing and past development of \nToggleTVSet\n by making a donation below.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nToggleTVSet\n development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
+            "text": "Support ToggleTVSet\n\n\nToggleTVSet\n is and always will be free and open-source, but it still requires\nmany man-hours of development, bug-fixing, maintaining the docs, support in\nMODX forums and on GitHub between the releases.\n\n\nPlease support the ongoing and past development of \nToggleTVSet\n by making a\ndonation below.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nToggleTVSet\n development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
             "title": "Donate"
         }, 
         {
             "location": "/donate/#support-toggletvset", 
-            "text": "ToggleTVSet  is and always will be free and open-source, but it still requires many man-hours of development, \nbug-fixing, maintaining the docs, support in MODX forums and on GitHub between the releases.  Please support the ongoing and past development of  ToggleTVSet  by making a donation below.           ToggleTVSet  development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
+            "text": "ToggleTVSet  is and always will be free and open-source, but it still requires\nmany man-hours of development, bug-fixing, maintaining the docs, support in\nMODX forums and on GitHub between the releases.  Please support the ongoing and past development of  ToggleTVSet  by making a\ndonation below.            ToggleTVSet  development is sponsored by Treehillstudio \u2013 MODX Development in M\u00fcnsterland.", 
             "title": "Support ToggleTVSet"
         }
     ]
