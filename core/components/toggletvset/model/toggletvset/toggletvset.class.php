@@ -164,8 +164,8 @@ class ToggleTVSet
                 $option = $options[$key];
             } elseif (array_key_exists($key, $this->options)) {
                 $option = $this->options[$key];
-            } elseif (array_key_exists("{$this->namespace}.{$key}", $this->modx->config)) {
-                $option = $this->modx->getOption("{$this->namespace}.{$key}");
+            } elseif (array_key_exists("$this->namespace.$key", $this->modx->config)) {
+                $option = $this->modx->getOption("$this->namespace.$key");
             }
         }
         return $option;
