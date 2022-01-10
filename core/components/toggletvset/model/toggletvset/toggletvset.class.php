@@ -91,7 +91,7 @@ class ToggleTVSet
         $hidetvs = array();
         $showtvs = array();
 
-        foreach ($this->options['toggletvs'] as $toggletv) {
+        foreach ($this->getOption('toggletvs') as $toggletv) {
             $toggletv = intval($toggletv);
             $tv = $this->modx->getObject('modTemplateVar', $toggletv);
 
