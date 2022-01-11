@@ -9,6 +9,7 @@
       "plugins": [
         {
           "name": "ToggleTVSet",
+          "description": "Toggle the visibility of template variables sets by the value of a template variable",
           "file": "toggletvset.plugin.php",
           "events": [
             "OnDocFormPreRender"
