@@ -1,22 +1,24 @@
 <?php
 /**
- * Output filter that retrieves the names of TVs from a list of TV IDs
+ * GetTVNames Snippet
  *
  * @package toggletvset
  * @subpackage snippet
  *
  * @var modX $modx
- * @var string $input
+ * @var array $scriptProperties
  */
 
-$tvIds = explode(',', $input);
+use TreehillStudio\ToggleTVSet\Snippets\GetTVNames;
 
-$tvNames = array();
-foreach ($tvIds as $tvId) {
-    $tv = $modx->getObject('modTemplateVar', $tvId);
-    if (!empty($tv)) {
-        $tvNames[] = $tv->get('name');
-    }
+$corePath = $modx->getOption('toggletvset.core_path', null, $modx->getOption('core_path') . 'components/toggletvset/');
+/** @var ToggleTVSet $toggletvset */
+$toggletvset = $modx->getService('toggletvset', 'ToggleTVSet', $corePath . 'model/toggletvset/', [
+    'core_path' => $corePath
+]);
+
+$snippet = new GetTVNames($modx, $scriptProperties);
+if ($snippet instanceof TreehillStudio\ToggleTVSet\Snippets\GetTVNames) {
+    return $snippet->execute();
 }
-
-return implode(',', $tvNames);
+return 'TreehillStudio\ToggleTVSet\Snippets\GetTVNames class not found';

@@ -39,14 +39,14 @@ one of them you use different TVs.
 
 #### Header Select TV
 
-Header (13) - Single Select TV
+Header (13) - ToggleTV (or before version 2.0.0: Single Select TV)
 
 * Input Option Values: `Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12`
-* Allow Blank: `false`
 * Default: `6`
-* Enable typeahead: `false`
+* Allow Blank: `false` (before version 2.0.0)
+* Enable typeahead: `false` (before version 2.0.0)
 
-Give each input option a label and add the ids of the TVs used as comma
+Give each input option a label and add the IDs of the TVs used as comma
 separated values.
 
 !!! note
@@ -58,6 +58,9 @@ separated values.
     ```
 
 ### Step 2 - Fill the MODX system setting
+
+!!! note
+    This is only needed before 2.0.0 or when you don't use a Toggle TV. 
 
 Locate the `toggletvset.toggletvs` MODX system setting and fill it with the ID
 of the Header Select TV.
@@ -96,7 +99,7 @@ use it like this:
 
 ### getTVNames
 
-This output filter retrieve names of TVs from a list of TV ids. You could get
+This output filter retrieve names of TVs from a list of TV IDs. You could get
 the TV names of the corresponding TV value with it.
 
 Example usage:
@@ -111,6 +114,6 @@ ToggleTVSet uses the following system settings in the namespace `toggletvset`:
 
 Key | Description | Default
 ----|-------------|--------
-toggletvset.toggletvs | Comma separated list of template variable ids that should toggle the visibility of other template variables. | -
+toggletvset.toggletvs | (Only needed before 2.0.0 or when you don't use a Toggle TV) Comma separated list of template variable IDs that should toggle the visibility of other template variables. | -
 toggletvset.toggletvs_clearhidden | Clear template variables that are hidden by ToggleTVSet. | No
-toggletvset.debug | Log debug informations in the MODX ystem log. | No
+toggletvset.debug | Log debug information in the MODX ystem log. | No

@@ -1,0 +1,30 @@
+{
+  "name": "treehillstudio/toggletvset",
+  "description": "Toggle the visibility of template variables sets by the value of a template variable",
+  "authors": [
+    {
+      "name": "Patrick Percy Blank",
+      "email": "info@pepebe.de",
+      "homepage": "https://github.com/pepebe"
+    },
+    {
+      "name": "Thomas Jakobi",
+      "email": "office@treehillstudio.com",
+      "homepage": "https://treehillstudio.com"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "7.2.5"
+    }
+  },
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "TreehillStudio\\ToggleTVSet\\": "src/"
+    }
+  }
+}

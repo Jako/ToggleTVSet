@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2022-01-18
+
+### Changed
+
+- Code refactoring
+- Full MODX 3 compatibility
+
+### Added
+
+- Toggle TV custom template variable
+
+### Removed
+
+- System setting `toggletvs` deprecated
+
 ## [1.2.6] - 2019-10-20
 
 ### Added
@@ -26,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.3] - 2016-04-07
 
-### Changed
+### Fixed
 
 - Fixing javascript issues with not valid hide/show tv values
 - Fixing issue with the getTVLabel output filter and not found placeholder name
@@ -34,13 +49,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.2] - 2016-02-10
 
-### Changed
+### Fixed
 
 - Fixing toggling more than one set
 
 ## [1.2.1] - 2016-02-01
 
-### Changed
+### Fixed
 
 - Fixing wrong visibility state shown after resource save
 

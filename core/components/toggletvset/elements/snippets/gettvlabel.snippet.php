@@ -1,38 +1,24 @@
 <?php
 /**
- * Output filter that retrieves the label of a corresponding TV value
+ * GetTVLabel Snippet
  *
  * @package toggletvset
  * @subpackage snippet
  *
  * @var modX $modx
- * @var string $input
- * @var string $options
+ * @var array $scriptProperties
  */
 
-// Output filter options
-$name = (!empty($options)) ? str_replace($options, '', $name) : $name;
-$tv = $modx->getObject('modTemplateVar', array('name' => $name));
+use TreehillStudio\ToggleTVSet\Snippets\GetTVLabel;
 
-$elements = (!empty($tv)) ? explode('||', $tv->get('elements')) : array();
+$corePath = $modx->getOption('toggletvset.core_path', null, $modx->getOption('core_path') . 'components/toggletvset/');
+/** @var ToggleTVSet $toggletvset */
+$toggletvset = $modx->getService('toggletvset', 'ToggleTVSet', $corePath . 'model/toggletvset/', [
+    'core_path' => $corePath
+]);
 
-$output = '';
-foreach ($elements as $key => $element) {
-    $element = explode('==', $element);
-
-    $value = isset($element[1]) ? $element[1] : '';
-    if (strpos($value, '[[') !== false) {
-        /** @var modChunk $chunk */
-        $chunk = $modx->newObject('modChunk', array('name' => '{tmp}-' . uniqid()));
-        $chunk->setCacheable(false);
-        $value = $chunk->process(array(), $value);
-        $parser = $modx->getParser();
-        $parser->processElementTags('', $value, true, true, '[[', ']]', array(), 0);
-    }
-    if ($value == $input) {
-        $output = $element[0];
-        break;
-    }
+$snippet = new GetTVLabel($modx, $scriptProperties);
+if ($snippet instanceof TreehillStudio\ToggleTVSet\Snippets\GetTVLabel) {
+    return $snippet->execute();
 }
-
-return $output;
+return 'TreehillStudio\ToggleTVSet\Snippets\GetTVLabel class not found';

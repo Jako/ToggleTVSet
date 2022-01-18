@@ -5,8 +5,8 @@ variable.
 
 ### Requirements
 
-* MODX Revolution 2.3+
-* PHP v5.3+
+* MODX Revolution 2.8+
+* PHP 7.2+
 
 ### Features
 
