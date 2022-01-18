@@ -620,14 +620,14 @@ one of them you use different TVs.</p>
 <li>Cover_RTE (12) - Richtext TV</li>
 </ul>
 <h4 id="header-select-tv">Header Select TV</h4>
-<p>Header (13) - Single Select TV</p>
+<p>Header (13) - ToggleTV (or before version 2.0.0: Single Select TV)</p>
 <ul>
 <li>Input Option Values: <code>Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12</code></li>
-<li>Allow Blank: <code>false</code></li>
 <li>Default: <code>6</code></li>
-<li>Enable typeahead: <code>false</code></li>
+<li>Allow Blank: <code>false</code> (before version 2.0.0)</li>
+<li>Enable typeahead: <code>false</code> (before version 2.0.0)</li>
 </ul>
-<p>Give each input option a label and add the ids of the TVs used as comma
+<p>Give each input option a label and add the IDs of the TVs used as comma
 separated values.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -637,6 +637,10 @@ Good: &quot;Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12&quot;
 </code></pre></div>
 </div>
 <h3 id="step-2-fill-the-modx-system-setting">Step 2 - Fill the MODX system setting</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is only needed before 2.0.0 or when you don't use a Toggle TV. </p>
+</div>
 <p>Locate the <code>toggletvset.toggletvs</code> MODX system setting and fill it with the ID
 of the Header Select TV.</p>
 <div class="admonition note">
@@ -660,7 +664,7 @@ use it like this:</p>
 <div class="highlight"><pre><span></span><code>[[+tv.selectTV:getTVLabel=`tv.`]]
 </code></pre></div>
 <h3 id="gettvnames">getTVNames</h3>
-<p>This output filter retrieve names of TVs from a list of TV ids. You could get
+<p>This output filter retrieve names of TVs from a list of TV IDs. You could get
 the TV names of the corresponding TV value with it.</p>
 <p>Example usage:</p>
 <div class="highlight"><pre><span></span><code>&amp;includeTVs=`[[*selectTV:getTVNames]]`
@@ -678,7 +682,7 @@ the TV names of the corresponding TV value with it.</p>
 <tbody>
 <tr>
 <td>toggletvset.toggletvs</td>
-<td>Comma separated list of template variable ids that should toggle the visibility of other template variables.</td>
+<td>(Only needed before 2.0.0 or when you don't use a Toggle TV) Comma separated list of template variable IDs that should toggle the visibility of other template variables.</td>
 <td>-</td>
 </tr>
 <tr>
@@ -688,7 +692,7 @@ the TV names of the corresponding TV value with it.</p>
 </tr>
 <tr>
 <td>toggletvset.debug</td>
-<td>Log debug informations in the MODX ystem log.</td>
+<td>Log debug information in the MODX ystem log.</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -749,7 +753,7 @@ the TV names of the corresponding TV value with it.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            &copy; 2015-2019 <a href="https://treehillstudio.com">Treehill Studio</a>
+            &copy; 2015-2022 <a href="https://treehillstudio.com">Treehill Studio</a>
           </div>
         
         Made with
