@@ -8,7 +8,6 @@
 
 namespace TreehillStudio\ToggleTVSet\Snippets;
 
-use DateInterval;
 use modX;
 use TreehillStudio\ToggleTVSet\ToggleTVSet;
 
@@ -22,22 +21,24 @@ abstract class Snippet
      * @var modX $modx
      */
     protected $modx;
+
     /**
      * A reference to the ToggleTVSet instance
      * @var ToggleTVSet $toggletvset
      */
     protected $toggletvset;
+
     /**
      * The snippet properties
      * @var array $properties
      */
-    protected $properties = [];
+    public array $properties = [];
 
     /**
      * The optional property prefix for snippet properties
      * @var string $propertyPrefix
      */
-    protected $propertyPrefix = '';
+    public string $propertyPrefix = '';
 
     /**
      * Creates a new Snippet instance.
@@ -50,7 +51,6 @@ abstract class Snippet
         $this->modx =& $modx;
 
         $corePath = $this->modx->getOption('toggletvset.core_path', null, $this->modx->getOption('core_path') . 'components/toggletvset/');
-        /** @var ToggleTVSet $toggletvset */
         $this->toggletvset = $this->modx->getService('toggletvset', 'ToggleTVSet', $corePath . 'model/toggletvset/', [
             'core_path' => $corePath
         ]);
@@ -132,26 +132,6 @@ abstract class Snippet
     protected function getExplodeSeparated($value, $separator = ',')
     {
         return (is_string($value) && $value !== '') ? array_map('trim', explode($separator, $value)) : [];
-    }
-
-    /**
-     * @param mixed $value
-     * @param string $default
-     * @return string
-     */
-    protected function getNormalizeDate($value, $default = 'today 0:00')
-    {
-        return $this->toggletvset->normalizeDate($value, $default);
-    }
-
-    /**
-     * @param mixed $value
-     * @param string $default
-     * @return string
-     */
-    protected function getDateInterval($value, $default = '+1 day')
-    {
-        return (!empty($value) && DateInterval::createFromDateString($value)) ? $value : $default;
     }
 
     /**
