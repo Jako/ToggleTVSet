@@ -45,29 +45,24 @@ ToggleTVSet.util = {
     },
     // Init toggling template variables
     init: function () {
-        if (ToggleTVSet.config.debug) {
-            Ext.util.Observable.capture(Ext.getCmp('modx-panel-resource'), function (e) {
-                //console.log(e, arguments);
+        ToggleTVSet.panel.Resource = Ext.getCmp('modx-panel-resource');
+        ToggleTVSet.config.initialized = false;
+        if (ToggleTVSet.panel.Resource) {
+            ToggleTVSet.panel.Resource.on('afterlayout', function () {
+                if (!ToggleTVSet.config.initialized) {
+                    ToggleTVSet.form.Resource = ToggleTVSet.panel.Resource.getForm();
+                    ToggleTVSet.util.toggleTVSets(ToggleTVSet.config, true);
+                    Ext.each(ToggleTVSet.config.toggleTVs, function (toggleTV) {
+                        var field = ToggleTVSet.form.Resource.findField('tv' + toggleTV);
+                        if (field) {
+                            field.on('select', function () {
+                                ToggleTVSet.util.toggleTVSets(this, false);
+                            });
+                        }
+                    });
+                }
+                ToggleTVSet.config.initialized = true;
             });
         }
-
-        ToggleTVSet.panel.Resource = Ext.getCmp('modx-panel-resource');
-        ToggleTVSet.form.Resource = ToggleTVSet.panel.Resource.getForm();
-        ToggleTVSet.config.initialized = false;
-
-        ToggleTVSet.panel.Resource.on('afterlayout', function () {
-            if (!ToggleTVSet.config.initialized) {
-                ToggleTVSet.util.toggleTVSets(ToggleTVSet.config, true);
-                Ext.each(ToggleTVSet.config.toggleTVs, function (toggleTV) {
-                    var field = ToggleTVSet.form.Resource.findField('tv' + toggleTV);
-                    if (field) {
-                        field.on('select', function () {
-                            ToggleTVSet.util.toggleTVSets(this, false);
-                        });
-                    }
-                });
-            }
-            ToggleTVSet.config.initialized = true;
-        });
     }
 }
