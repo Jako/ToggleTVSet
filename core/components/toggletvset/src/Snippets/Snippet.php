@@ -32,13 +32,13 @@ abstract class Snippet
      * The snippet properties
      * @var array $properties
      */
-    public array $properties = [];
+    public $properties = [];
 
     /**
      * The optional property prefix for snippet properties
      * @var string $propertyPrefix
      */
-    public string $propertyPrefix = '';
+    public $propertyPrefix = '';
 
     /**
      * Creates a new Snippet instance.
