@@ -43,7 +43,7 @@ class ToggletvsetInputRender extends modTemplateVarInputRender
         foreach ($options as $option) {
             $option = explode('==', $option);
             $optionText = $option[0];
-            $optionValue = (isset($option[1]) && $option[1]) ? $option[1] : $option[0];
+            $optionValue = (isset($option[1])) ? $option[1] : $option[0];
             $opts[] = [
                 'text' => $optionText,
                 'value' => $optionValue,
