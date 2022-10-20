@@ -2,7 +2,7 @@
 /**
  * ToggleTVSet
  *
- * Copyright 2015-2022 by Patrick Percy Blank <info@pepebe.de>
+ * Copyright 2015 by Patrick Percy Blank <info@pepebe.de>
  * Copyright 2015-2022 by Thomas Jakobi <office@treehillstudio.com>
  *
  * @package toggletvset

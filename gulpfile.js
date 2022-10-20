@@ -86,7 +86,7 @@ const bumpCopyright = function () {
         'core/components/toggletvset/model/toggletvset/toggletvset.class.php',
         'core/components/toggletvset/src/ToggleTVSet.php'
     ], {base: './'})
-        .pipe(replace(/Copyright 2015(-\d{4})? by/g, 'Copyright ' + (year > 2015 ? '2015-' : '') + year + ' by'))
+        .pipe(replace(/Copyright 2015-(\d{4})? by/g, 'Copyright ' + (year > 2015 ? '2015-' : '') + year + ' by'))
         .pipe(gulp.dest('.'));
 };
 const bumpVersion = function () {
@@ -100,14 +100,14 @@ const bumpHomepanel = function () {
     return gulp.src([
         'source/js/mgr/toggletvset.panel.inputoptions.js'
     ], {base: './'})
-        .pipe(replace(/&copy; 2015(-\d{4})?/g, '&copy; ' + (year > 2015 ? '2015-' : '') + year))
+        .pipe(replace(/&copy; 2015-(\d{4})?/g, '&copy; ' + (year > 2015 ? '2015-' : '') + year))
         .pipe(gulp.dest('.'));
 };
 const bumpDocs = function () {
     return gulp.src([
         'mkdocs.yml',
     ], {base: './'})
-        .pipe(replace(/&copy; 2015(-\d{4})?/g, '&copy; ' + (year > 2015 ? '2015-' : '') + year))
+        .pipe(replace(/&copy; 2015-(\d{4})?/g, '&copy; ' + (year > 2015 ? '2015-' : '') + year))
         .pipe(gulp.dest('.'));
 };
 const bumpRequirements = function () {
