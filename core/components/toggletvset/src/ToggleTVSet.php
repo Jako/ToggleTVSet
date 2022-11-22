@@ -89,8 +89,8 @@ class ToggleTVSet
 
         // Set default options
         $this->options = array_merge($this->options, [
-            'debug' => (bool)$this->getOption('debug'),
-            'toggleTVsClearHidden' => (bool)$this->getOption('toggletvs_clearhidden'),
+            'debug' => $this->getBooleanOption('debug', [], false),
+            'toggleTVsClearHidden' => $this->getBooleanOption('toggletvs_clearhidden', [], false),
         ]);
 
         //$this->setToggleTVs();
@@ -124,33 +124,17 @@ class ToggleTVSet
     }
 
     /**
-     * Gets a context-aware setting through $this->getOption, and casts the value to a true boolean automatically,
-     * including strings "false" and "no" which are sometimes set that way by ExtJS.
+     * Get Boolean Option
      *
-     * @param string $name
+     * @param string $key
      * @param array $options
-     * @param bool $default
+     * @param mixed $default
      * @return bool
      */
-    public function getBooleanOption($name, array $options = [], $default = null)
+    public function getBooleanOption($key, $options = [], $default = null)
     {
-        $option = $this->getOption($name, $options, $default);
-        return $this->castValueToBool($option);
-    }
-
-    /**
-     * Turns a value into a boolean. This checks for "false" and "no" strings, as well as anything PHP can automatically
-     * cast to a boolean value.
-     *
-     * @param $value
-     * @return bool
-     */
-    public function castValueToBool($value)
-    {
-        if (in_array(strtolower($value), ['false', 'no'])) {
-            return false;
-        }
-        return (bool)$value;
+        $option = $this->getOption($key, $options, $default);
+        return ($option === 'true' || $option === true || $option === '1' || $option === 1);
     }
 
     /**
