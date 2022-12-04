@@ -1,6 +1,6 @@
 <?php
 /**
- * @package superboxselect
+ * @package toggletvset
  * @subpackage plugin
  */
 
