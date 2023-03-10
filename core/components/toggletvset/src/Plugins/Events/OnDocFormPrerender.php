@@ -17,7 +17,7 @@ class OnDocFormPrerender extends Plugin
             MODx.on("ready", function() {
                 setTimeout(function () {
                     ToggleTVSet.util.init();
-                }, 500);
+                }, 0);
             });
         </script>');
     }

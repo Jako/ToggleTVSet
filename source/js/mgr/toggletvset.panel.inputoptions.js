@@ -25,7 +25,7 @@ ToggleTVSet.panel.InputOptions = function (config) {
                     this.getEl().select('img').on('click', function () {
                         var msg = '<span style="display: inline-block; text-align: center;">&copy; 2015 by Patrick Percy Blank <a href="https://github.com/pepebe" target="_blank">github.com/pepebe</a><br>' +
                             '<img src="' + ToggleTVSet.config.assetsUrl + 'img/treehill-studio.png" srcset="' + ToggleTVSet.config.assetsUrl + 'img/treehill-studio@2x.png 2x" alt="Treehill Studio" style="margin-top: 10px"><br>' +
-                            '&copy; 2015-2022 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
+                            '&copy; 2015-2023 by <a href="https://treehillstudio.com" target="_blank">treehillstudio.com</a></span>';
                         Ext.Msg.show({
                             title: _('toggletvset.package') + ' ' + ToggleTVSet.config.version,
                             msg: msg,
