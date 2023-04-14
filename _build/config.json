@@ -2,7 +2,7 @@
   "name": "ToggleTVSet",
   "lowCaseName": "toggletvset",
   "description": "Toggle the visibility of template variables sets by the value of a template variable",
-  "author": "Patrick Percy Blank/Thomas Jakobi",
+  "author": "Patrick Percy Blank, Thomas Jakobi",
   "version": "2.0.4",
   "package": {
     "elements": {
