@@ -46,7 +46,6 @@ ToggleTVSet.util = {
     // Init toggling template variables
     init: function () {
         ToggleTVSet.panel.Resource = Ext.getCmp('modx-panel-resource');
-        ToggleTVSet.config.initialized = false;
         if (ToggleTVSet.panel.Resource) {
             ToggleTVSet.panel.Resource.on('afterlayout', function () {
                 if (!ToggleTVSet.config.initialized) {
