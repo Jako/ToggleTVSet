@@ -76,7 +76,7 @@ const sassMgr = function () {
 gulp.task('sass', gulp.series(sassMgr));
 
 const imagesMgr = function () {
-    return gulp.src('./source/img/**/*.+(png|jpg|gif|svg)')
+    return gulp.src('./source/img/**/*.+(png|jpg|gif|svg)', {encoding: false})
         .pipe(gulp.dest('assets/components/toggletvset/img/'));
 };
 gulp.task('images', gulp.series(imagesMgr));
