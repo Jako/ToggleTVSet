@@ -5,7 +5,8 @@ four different headers. Each type of header needs one or more TVs but you only
 want to show the TVs needed for the selected type of header. Inside your
 template you want to use different chunks for templating.
 
-!!! danger "Warning"
+!!! danger "Don't misuse this extra"
+
     Please don't misuse this extra and assign all TVs to all templates and hide 
     them by the default value of a toggling TV. This could cause speed problems 
     in the backend and also in the frontend because the template variable 
@@ -49,7 +50,8 @@ Header (13) - ToggleTV (or before version 2.0.0: Single Select TV)
 Give each input option a label and add the IDs of the TVs used as comma
 separated values.
 
-!!! note
+!!! note "Be careful with the value"
+
     Be careful not to add empty spaces inside the value!
     
     ```
@@ -59,15 +61,17 @@ separated values.
 
 ### Step 2 - Fill the MODX system setting
 
-!!! note
+!!! note "Optional"
+
     This is only needed before 2.0.0 or when you don't use a Toggle TV. 
 
 Locate the `toggletvset.toggletvs` MODX system setting and fill it with the ID
 of the Header Select TV.
 
-!!! note
-    The ID numbers of the template variables in the example ar just for
-    demonstation and should be different in your installation.
+!!! note "ID numbers are examples"
+
+    The ID numbers of the template variables in the example are just for
+    demonstation and can be different in your installation.
 
 ## Output Filter
 
