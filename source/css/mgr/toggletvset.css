@@ -83,9 +83,9 @@
 }
 
 .treehillstudio_window a {
-  color: #b2bf28;
+  color: rgb(178.3157894737, 191.4868421053, 39.5131578947);
   text-decoration: none;
 }
 .treehillstudio_window a:hover {
-  color: #77801a;
+  color: rgb(119.2631578947, 128.0723684211, 26.4276315789);
 }

@@ -41,7 +41,7 @@ class ToggleTVSet
      * The version
      * @var string $version
      */
-    public $version = '2.0.5';
+    public $version = '2.0.6';
 
     /**
      * The class options
@@ -171,14 +171,17 @@ class ToggleTVSet
         $showtvs = [];
 
         $c = $this->modx->newQuery('modTemplateVar');
+        $c->innerJoin('modTemplateVarTemplate', 'TemplateVarTemplate', [
+            'TemplateVarTemplate.tmplvarid = modTemplateVar.id',
+        ]);
         $c->where([
-            'type:=' => 'toggletvset'
+            'type:=' => 'toggletvset',
+            'TemplateVarTemplate.templateid' => $this->modx->resource->get('template') ?? $this->modx->getOption('default_template'),
         ]);
         if ($this->getOption('toggletvs')) {
             $c->where([
                 'OR:id:IN' => ($this->getOption('toggletvs')) ? array_map('trim', explode(',', $this->getOption('toggletvs'))) : [],
             ]);
-
         }
         $tvs = $this->modx->getIterator('modTemplateVar', $c);
         foreach ($tvs as $tv) {
