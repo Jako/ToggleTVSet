@@ -176,7 +176,7 @@ class ToggleTVSet
         ]);
         $c->where([
             'type:=' => 'toggletvset',
-            'TemplateVarTemplate.templateid' => $this->modx->resource->get('template') ?? $this->modx->getOption('default_template'),
+            'TemplateVarTemplate.templateid' => ($this->modx->resource) ? $this->modx->resource->get('template') : $this->modx->getOption('default_template'),
         ]);
         if ($this->getOption('toggletvs')) {
             $c->where([
