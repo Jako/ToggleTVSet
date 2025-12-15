@@ -116,8 +116,8 @@ Example usage:
 
 ToggleTVSet uses the following system settings in the namespace `toggletvset`:
 
-Key | Description | Default
-----|-------------|--------
-toggletvset.toggletvs | (Only needed before 2.0.0 or when you don't use a Toggle TV) Comma separated list of template variable IDs that should toggle the visibility of other template variables. | -
-toggletvset.toggletvs_clearhidden | Clear template variables that are hidden by ToggleTVSet. | No
-toggletvset.debug | Log debug information in the MODX ystem log. | No
+| Key                               | Description                                                                                                                                                               | Default |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| toggletvset.toggletvs             | (Only needed before 2.0.0 or when you don't use a Toggle TV) Comma-separated list of template variable IDs that should toggle the visibility of other template variables. | -       |
+| toggletvset.toggletvs_clearhidden | Clear template variables that are hidden by ToggleTVSet.                                                                                                                  | No      |
+| toggletvset.debug                 | Log debug information in the MODX ystem log.                                                                                                                              | No      |
