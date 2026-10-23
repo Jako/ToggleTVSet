@@ -6,7 +6,7 @@ site_url = "https://jako.github.io/ToggleTVSet/"
 repo_url = "https://github.com/Jako/ToggleTVSet/"
 repo_name = "Jako/ToggleTVSet"
 copyright = """
-&copy; 2015 <a href="https://github.com/pepebe">Patrick Percy Blank</a>, 2015-2026 <a href="https://treehillstudio.com">Treehill Studio</a>
+&copy; 2015 <a href="https://github.com/pepebe">Patrick Percy Blank</a>, 2015-2025 <a href="https://treehillstudio.com">Treehill Studio</a>
 """
 nav = [
     "index.md",
